@@ -45,6 +45,7 @@
     if (xmlHttp.readyState === 4) {
         if (xmlHttp.status === 200) {
           document.open();
+          window.close();
           document.write(xmlHttp.responseText);
           document.close();
         } else {

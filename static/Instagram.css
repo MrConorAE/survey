@@ -27,6 +27,10 @@ footer {
   font-size: 15px;
 }
 
+footer p {
+  text-align: center !important;
+}
+
 #from {
   color: #9e9e9e;
 }
