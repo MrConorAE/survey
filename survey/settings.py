@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'survey.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3fslmasv8daad',
+        'USER': 'rjvrtvmbhktxec',
+        'PASSWORD': '5b3b14b4c5ec031c8558b75306dd66f15e8ef64f39aa324461a8e65e0303b8d6',
+        'HOST': 'ec2-34-193-232-231.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
