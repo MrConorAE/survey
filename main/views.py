@@ -6,6 +6,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+@csrf_exempt
 def main(request):
     if request.method == "POST":
         username = request.POST.get('username')
