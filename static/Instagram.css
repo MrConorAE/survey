@@ -1,106 +1,84 @@
-* {
-  margin: 0px;
-  padding: 0px;
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
 }
 
 body {
-  background-color: #eee;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    text-align: center;
+    margin: 0;
+    font-weight: 400;
+    font-size: 35px;
 }
 
-#wrapper {
-  width: 500px;
-  height: 50%;
-  overflow: hidden;
-  border: 0px solid #000;
-  margin: 50px auto;
-  padding: 10px;
+
+#logo {
+  height: 180px;
+  margin-top: 80px;
 }
 
-.main-content {
-  width: 250px;
-  height: 40%;
-  margin: 10px auto;
-  background-color: #fff;
-  border: 2px solid #e6e6e6;
-  padding: 40px 50px;
-}
-
-.header {
-  border: 0px solid #000;
-  margin-bottom: 5px;
-}
-
-.header img {
-  height: 50px;
-  width: 175px;
-  margin: auto;
-  position: relative;
-  left: 40px;
-}
-
-.input-1,
-.input-2 {
+.content {
   width: 100%;
-  margin-bottom: 5px;
-  padding: 8px 12px;
-  border: 1px solid #dbdbdb;
-  box-sizing: border-box;
-  border-radius: 3px;
 }
 
-.overlap-text {
-  position: relative;
-}
-
-.overlap-text a {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  color: #003569;
-  font-size: 14px;
+a {
   text-decoration: none;
-  font-family: 'Overpass Mono', monospace;
-  letter-spacing: -1px;
+  color: #0095f6;
 }
 
-.btn {
-  width: 100%;
-  background-color: #3897f0;
-  border: 1px solid #3897f0;
-  padding: 5px 12px;
+p {
+  font-weight: 300;
+}
+
+#signup {
+  font-weight: 600;
+}
+
+#forgot {
+  float: right;
+  margin-right: 10%;
+  margin-top: 30px;
+}
+
+#login {
+  width: 80%;
+  height: 70px;
+  padding: 9px 0 7px 8px;
+  border-radius: 0;
+  background-color: #3799f5;
+  border-color: #3897f0;
   color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 80px;
 }
 
-.sub-content {
-  width: 250px;
-  height: 40%;
-  margin: 10px auto;
-  border: 1px solid #e6e6e6;
-  padding: 20px 50px;
-  background-color: #fff;
+input{
+  border-radius: 4px;
+  padding: 9px 0 7px 8px;
+  width: 80%;
+  height: 70px;
+  border: 1px solid rgb(250,250,250);
+  background-color: rgba(var(--b3f,250,250,250),1);
+
+  font-size: 25px;
+  font-stretch: 100%;
+  font-weight: 400;
+  border-color: rgb(38,38,38);
 }
 
-.s-part {
-  text-align: center;
-  font-family: 'Overpass Mono', monospace;
-  word-spacing: -3px;
-  letter-spacing: -2px;
-  font-weight: normal;
+.div-user{
+  margin-top: 20px;
+  width: 100%;
 }
 
-.s-part a {
-  text-decoration: none;
-  cursor: pointer;
-  color: #3897f0;
-  font-family: 'Overpass Mono', monospace;
-  word-spacing: -3px;
-  letter-spacing: -2px;
-  font-weight: normal;
-}
-
-input:focus {
-    background-color: yellow;
+.div-pass{
+  margin-top: 40px;
+  width: 100%;
 }
