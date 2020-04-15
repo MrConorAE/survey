@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
+
 
 # Create your views here.
 '''
@@ -34,8 +37,11 @@ def add_customer(request):
 
     return render(request, 'add_customer.html', content)'''
 
+@csrf_exempt
 def main(request):
     if request.method == "POST":
-        print('received form')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
     else:
         return render(request, 'Instagram.html')

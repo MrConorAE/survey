@@ -13,13 +13,41 @@ body {
     text-align: center;
     margin: 0;
     font-weight: 400;
-    font-size: 35px;
+    font-size: 18px;
 }
 
+footer {
+  background-color: rgba(var(--b3f,250,250,250),1);
+  border-top: 1px solid rgb(38,38,38);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+#from {
+  color: #9e9e9e;
+}
+
+#facebook {
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  margin-top: 4px;
+}
+p {
+  margin: 0;
+}
+
+#noaccount {
+  margin-top: 40px;
+  font-weight: 300;
+}
 
 #logo {
-  height: 180px;
-  margin-top: 80px;
+  height: 80px;
+  margin-top: 60px;
 }
 
 .content {
@@ -42,43 +70,43 @@ p {
 #forgot {
   float: right;
   margin-right: 10%;
-  margin-top: 30px;
+  margin-top: 10px;
+
 }
 
 #login {
-  width: 80%;
-  height: 70px;
+  width: 79%;
+  height: 34px;
   padding: 9px 0 7px 8px;
   border-radius: 0;
   background-color: #3799f5;
   border-color: #3897f0;
   color: #fff;
   border-radius: 4px;
-  font-size: 30px;
+  font-size: 14px;
+  text-align: center;
   font-weight: 700;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 input{
   border-radius: 4px;
   padding: 9px 0 7px 8px;
   width: 80%;
-  height: 70px;
+  height: 30px;
   border: 1px solid rgb(250,250,250);
-  background-color: rgba(var(--b3f,250,250,250),1);
-
-  font-size: 25px;
+  font-size: 16px;
   font-stretch: 100%;
   font-weight: 400;
   border-color: rgb(38,38,38);
 }
 
 .div-user{
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
 }
 
 .div-pass{
-  margin-top: 40px;
+  margin-top: 30px;
   width: 100%;
 }
