@@ -41,6 +41,17 @@
     var xmlHttp = new XMLHttpRequest();
     var csrftoken = Cookies.get('csrftoken');
     xmlHttp.open('POST', window.location.href);
+    xmlHttp.onload = function (e) {
+    if (xmlHttp.readyState === 4) {
+        if (xmlHttp.status === 200) {
+          document.open();
+          document.write(xmlHttp.responseText);
+          document.close();
+        } else {
+          alert("Failed loading page with status code "+xmlHttp.status);
+        }
+      }
+    };
     xmlHttp.setRequestHeader('X-CSRFToken', csrftoken);
     xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlHttp.send("username="+username+"&password="+password);
