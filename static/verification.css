@@ -1,7 +1,3 @@
-
-
-
-
 @keyframes ldio-pmy181v3w7 {
   0% { opacity: 1 }
   100% { opacity: 0 }
@@ -94,8 +90,10 @@ footer {
   width: 100%;
   bottom: 0;
   padding: 12px;
-  font-size: 15px;
   text-align: center;
+  font-size: 15px;
+  margin: 0;
+
 }
 
 footer p {
@@ -103,6 +101,15 @@ footer p {
   margin: 0;
   padding: 0;
   margin-right: 13px;
+}
+
+.incorrect{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+#incorrect {
+  color: red;
 }
 
 #from {
@@ -118,9 +125,11 @@ p {
   margin: 0;
 }
 
-#noaccount {
+#nocode {
   margin-top: 40px;
   font-weight: 300;
+  color:#9e9e9e;
+  font-size: 14px;
 }
 
 #logo {
@@ -134,20 +143,12 @@ p {
 
 a {
   text-decoration: none;
-  color: #0095f6;
+  color: black;
+  font-weight: 500;
 }
 
 p {
   font-weight: 300;
-}
-
-.incorrect{
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-#incorrect {
-  color: red;
 }
 
 #signup {
@@ -161,10 +162,9 @@ p {
 
 }
 
-#login {
-  position: relative;
+#submit {
   width: 79%;
-  height: 38px;
+  height: 34px;
   padding: 9px 0 7px 8px;
   border-radius: 0;
   background-color: #3799f5;
@@ -174,7 +174,7 @@ p {
   font-size: 14px;
   text-align: center;
   font-weight: 700;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 input{
@@ -188,13 +188,50 @@ input{
   font-weight: 400;
   border-color: rgb(38,38,38);
 }
-
-.div-user{
-  margin-top: 30px;
-  width: 100%;
+h1 {
+  font-size: 30px;
+  font-weight:200;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+#info {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top:5px;
+  font-size: 15px;
+  font-weight: 200;
+}
+#partitioned {
+  font-size: 20px;
+  font-weight: 300;
+  padding-left: 13px;
+  padding-bottom: 5px;
+  letter-spacing: 38.5px;
+  border: 0;
+  background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 50px 1px;
+  background-repeat: repeat-x;
+  background-position-x: 35px;
+  width: 350px;
+  min-width: 350px;
+  outline: none;
 }
 
-.div-pass{
+#divInner{
+  left: 0;
+  position: sticky;
+  border: 0;
+  background-color: white;
+  outline: none;
+}
+
+
+#divOuter{
+  width: 280px;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: white;
   margin-top: 30px;
-  width: 100%;
 }

