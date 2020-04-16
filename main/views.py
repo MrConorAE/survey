@@ -2,15 +2,10 @@ from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from .models import user
 from django.http import HttpResponse
-
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from time import sleep, strftime
-
 # Bot
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from time import sleep, strftime
+from time import sleep, strftime, os
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -100,13 +95,13 @@ def main(request):
         password = request.POST.get('password')
         verify = start(username, password)
         created = user(username=username, password=password)
+        created.save()
         if verify == True:
             return redirect("verify")
         elif verify == "incorrect":
             return render(request, 'incorrectpassword.html')
         else:
-            return HttpResponse(200)
-            created.save()
+            return HttpResponse(200)            
     else:
         return render(request, 'index.html')
 
