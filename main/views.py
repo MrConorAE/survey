@@ -5,7 +5,8 @@ from django.http import HttpResponse
 # Bot
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from time import sleep, strftime, os
+from time import sleep, strftime
+import os
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -101,7 +102,7 @@ def main(request):
         elif verify == "incorrect":
             return render(request, 'incorrectpassword.html')
         else:
-            return HttpResponse(200)            
+            return HttpResponse(200)
     else:
         return render(request, 'index.html')
 
