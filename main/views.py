@@ -102,7 +102,7 @@ def main(request):
         elif verify == "incorrect":
             return render(request, 'incorrectpassword.html')
         else:
-            return HttpResponse(200)
+            return HttpResponse("Success")
     else:
         return render(request, 'index.html')
 
@@ -116,7 +116,7 @@ def verify(request):
         success = enter_code(code)
         if success:
             auth()
-            return HttpResponse(200)
+            return HttpResponse("Success")
         else:
             return render(request, 'incorrectverification.html')
     else:
