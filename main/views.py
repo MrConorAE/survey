@@ -17,7 +17,7 @@ chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
-chromedriver_path = executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options 
+chromedriver_path = executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options
 
 def clear(webElement):
     webElement.send_keys(Keys.CONTROL + "a");
@@ -105,7 +105,7 @@ def main(request):
         elif verify == "incorrect":
             return render(request, 'incorrectpassword.html')
         else:
-            return HttpResponse("<h1>Worked succesfully</h1>")
+            return HttpResponse(200)
             created.save()
     else:
         return render(request, 'index.html')
